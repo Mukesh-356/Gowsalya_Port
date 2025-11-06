@@ -19,15 +19,15 @@ const Projects = () => {
       image: "💼"
     },
     {
-      title: "Task Management App",
-      description: "Productivity app with real-time updates and intuitive UI",
-      tech: ["Vue.js", "Firebase", "SCSS"],
+      title: "WIFI CHAT Based On IP Address",
+      description: "Productivity app with real-time chating and sharing files",
+      tech: ["react", "socket io", "multer and mongodb"],
       image: "✅"
     },
     {
-      title: "Weather Dashboard",
-      description: "Beautiful weather app with interactive charts and maps",
-      tech: ["React", "Chart.js", "API"],
+      title: "Hotel  Booking",
+      description: "Hotel Booking for holidays or vocation ",
+      tech: ["React", "javascript", "API"],
       image: "🌤️"
     }
   ]

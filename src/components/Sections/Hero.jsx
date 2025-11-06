@@ -152,13 +152,13 @@ const Hero = () => {
               WebkitTextFillColor: 'transparent',
               filter: 'drop-shadow(0 0 10px #00D8FF)'
             }}>
-          CREATIVE
+          DEVELOPER
         </h1>
         
         {/* Name Section */}
         <div ref={nameRef} className="mb-12 transform hover:scale-105 transition-transform duration-500">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Gowsalya <span style={{
+            Gowsalya Anbalagan <span style={{
               background: 'linear-gradient(135deg, #00D8FF 0%, #7928CA 50%, #FF0080 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',

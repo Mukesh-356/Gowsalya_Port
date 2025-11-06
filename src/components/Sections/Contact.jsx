@@ -30,17 +30,19 @@ const Contact = () => {
     setIsSubmitting(true)
 
     try {
-      await emailjs.sendForm(
-        'service_rd4r2l6',
-        'template_24adqmq',
+      const result = await emailjs.sendForm(
+        'service_rd4r2l6', // Your Service ID
+        'template_24adqmq', // Your Template ID
         formRef.current,
-        'HufKFXydAPZ-x8z0c'
+        'HufKFXydAPZ-x8z0c' // Your Public Key
       )
       
-      setMessage('Message sent successfully! 🎉')
+      console.log('Email sent successfully:', result)
+      setMessage('Message sent successfully! 🎉 I will get back to you soon.')
       formRef.current.reset()
     } catch (error) {
-      setMessage('Failed to send message. Please try again.')
+      console.error('Email send failed:', error)
+      setMessage('Failed to send message. Please try again or contact me directly at abigowsalya3@gmail.com')
     } finally {
       setIsSubmitting(false)
       setTimeout(() => setMessage(''), 5000)
@@ -77,13 +79,13 @@ const Contact = () => {
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium mb-2 text-white">Name</label>
+                <label className="block text-sm font-medium mb-2 text-white">Your Name *</label>
                 <input
                   type="text"
-                  name="from_name"
+                  name="user_name"  // Changed from from_name to user_name
                   required
-                  className="w-full px-4 py-3 rounded-lg focus:outline-none transition-colors text-white"
-                  placeholder="Your Name"
+                  className="w-full px-4 py-3 rounded-lg focus:outline-none transition-colors text-white placeholder-gray-400"
+                  placeholder="Enter your full name"
                   style={{
                     background: 'rgba(255, 255, 255, 0.1)',
                     border: '1px solid rgba(255, 255, 255, 0.2)'
@@ -91,13 +93,13 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2 text-white">Email</label>
+                <label className="block text-sm font-medium mb-2 text-white">Your Email *</label>
                 <input
                   type="email"
-                  name="from_email"
+                  name="user_email"  // Changed from from_email to user_email
                   required
-                  className="w-full px-4 py-3 rounded-lg focus:outline-none transition-colors text-white"
-                  placeholder="your@email.com"
+                  className="w-full px-4 py-3 rounded-lg focus:outline-none transition-colors text-white placeholder-gray-400"
+                  placeholder="your.email@example.com"
                   style={{
                     background: 'rgba(255, 255, 255, 0.1)',
                     border: '1px solid rgba(255, 255, 255, 0.2)'
@@ -107,13 +109,13 @@ const Contact = () => {
             </div>
             
             <div>
-              <label className="block text-sm font-medium mb-2 text-white">Subject</label>
+              <label className="block text-sm font-medium mb-2 text-white">Subject *</label>
               <input
                 type="text"
                 name="subject"
                 required
-                className="w-full px-4 py-3 rounded-lg focus:outline-none transition-colors text-white"
-                placeholder="Subject"
+                className="w-full px-4 py-3 rounded-lg focus:outline-none transition-colors text-white placeholder-gray-400"
+                placeholder="What is this regarding?"
                 style={{
                   background: 'rgba(255, 255, 255, 0.1)',
                   border: '1px solid rgba(255, 255, 255, 0.2)'
@@ -122,13 +124,13 @@ const Contact = () => {
             </div>
             
             <div>
-              <label className="block text-sm font-medium mb-2 text-white">Message</label>
+              <label className="block text-sm font-medium mb-2 text-white">Your Message *</label>
               <textarea
                 name="message"
                 required
                 rows="6"
-                className="w-full px-4 py-3 rounded-lg focus:outline-none transition-colors resize-none text-white"
-                placeholder="Your message..."
+                className="w-full px-4 py-3 rounded-lg focus:outline-none transition-colors resize-none text-white placeholder-gray-400"
+                placeholder="Tell me about your project or inquiry..."
                 style={{
                   background: 'rgba(255, 255, 255, 0.1)',
                   border: '1px solid rgba(255, 255, 255, 0.2)'
@@ -139,12 +141,19 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-white"
+              className="w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-white hover:scale-105 transform"
               style={{
                 background: 'linear-gradient(135deg, #00D8FF 0%, #7928CA 100%)'
               }}
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {isSubmitting ? (
+                <div className="flex items-center justify-center space-x-2">
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  <span>Sending...</span>
+                </div>
+              ) : (
+                'Send Message'
+              )}
             </button>
 
             {message && (
@@ -152,7 +161,8 @@ const Contact = () => {
                 message.includes('successfully') ? 'text-green-400' : 'text-red-400'
               }`}
               style={{
-                background: 'rgba(255, 255, 255, 0.05)'
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
               }}>
                 {message}
               </div>
@@ -162,21 +172,36 @@ const Contact = () => {
 
         {/* Contact Info */}
         <div className="text-center mt-12">
-          <div className="flex justify-center space-x-8">
-            <div className="text-center">
+          <div className="grid md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+            <div className="text-center p-4 rounded-xl"
+                 style={{
+                   background: 'rgba(255, 255, 255, 0.05)',
+                   backdropFilter: 'blur(10px)',
+                   border: '1px solid rgba(255, 255, 255, 0.1)'
+                 }}>
               <div className="text-2xl mb-2">📧</div>
-              <p className="text-gray-400">Email</p>
-              <p className="text-cyan-300">gowsalya@example.com</p>
+              <p className="text-gray-400 text-sm">Email</p>
+              <p className="text-cyan-300 font-semibold">abigowsalya3@gmail.com</p>
             </div>
-            <div className="text-center">
+            <div className="text-center p-4 rounded-xl"
+                 style={{
+                   background: 'rgba(255, 255, 255, 0.05)',
+                   backdropFilter: 'blur(10px)',
+                   border: '1px solid rgba(255, 255, 255, 0.1)'
+                 }}>
               <div className="text-2xl mb-2">📱</div>
-              <p className="text-gray-400">Phone</p>
-              <p className="text-cyan-300">+91 9876543210</p>
+              <p className="text-gray-400 text-sm">Phone</p>
+              <p className="text-purple-300 font-semibold">+91-6383255502</p>
             </div>
-            <div className="text-center">
+            <div className="text-center p-4 rounded-xl"
+                 style={{
+                   background: 'rgba(255, 255, 255, 0.05)',
+                   backdropFilter: 'blur(10px)',
+                   border: '1px solid rgba(255, 255, 255, 0.1)'
+                 }}>
               <div className="text-2xl mb-2">📍</div>
-              <p className="text-gray-400">Location</p>
-              <p className="text-cyan-300">Tamil Nadu, India</p>
+              <p className="text-gray-400 text-sm">Location</p>
+              <p className="text-pink-300 font-semibold">Salem,  Tamil Nadu, India</p>
             </div>
           </div>
         </div>

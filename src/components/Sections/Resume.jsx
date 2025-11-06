@@ -51,27 +51,27 @@ const Resume = () => {
 
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Innovations Inc.",
-      period: "2022 - Present",
-      description: "Leading frontend development team in creating modern web applications using React, GSAP, and Tailwind CSS.",
+      title: "Software Developer ",
+      company: "Yuga Yatra  ",
+      period: "2025 - Present",
+      description: "Leading frontend development team in creating modern web applications using React, wordpress, and fire base.",
       achievements: ["Improved performance by 40%", "Led team of 5 developers", "Implemented CI/CD pipeline"]
     },
     {
-      title: "UI/UX Developer",
-      company: "Digital Solutions Ltd.",
-      period: "2020 - 2022",
-      description: "Created intuitive user interfaces and implemented smooth animations for various web applications.",
-      achievements: ["Redesigned 10+ applications", "Improved user engagement by 60%", "Created design system"]
+      title: "Software Developer",
+      company: "Muyhayammal Engineering Collage.",
+      period: "2025 - 2025",
+      description: "Created intuitive user interfaces and implemented smooth animations for mern project.",
+      achievements: ["Develping chat application based on IP  address", "Improved user engagement by 60%", "Created design system"]
     }
   ]
 
   const education = [
     {
-      degree: "Bachelor of Computer Science",
-      institution: "University of Technology",
-      period: "2016 - 2020",
-      description: "Specialized in Web Technologies and User Interface Design"
+      degree: "Bachelor of Artificial Inteligence & Data Science",
+      institution: "Muthayammal Engineering Collage ",
+      period: "2023 - 2027"       ,
+      // description: "Specialized in Web Technologies and User Interface Design"
     }
   ]
 
@@ -201,10 +201,11 @@ const Resume = () => {
             </h3>
             <div className="space-y-4">
               {[
-                "Advanced React Development",
-                "UI/UX Design Professional",
-                "GSAP Animation Master",
-                "Full Stack Development"
+                "Salesforce Administration",
+                "Front-end development",
+                "Oracel Certification ",
+                "Full Stack Development",
+                "Snow Flake Certification"
               ].map((cert, index) => (
                 <div 
                   key={index}

@@ -40,7 +40,7 @@ const About = () => {
             <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
               <p>
                 I'm a passionate <span className="text-cyan-300 font-semibold">Creative Developer</span> and{' '}
-                <span className="text-purple-300 font-semibold">UI/UX Designer</span> with over 3 years of 
+                <span className="text-purple-300 font-semibold"> Designer</span> with over 1 years of 
                 experience in crafting digital experiences.
               </p>
               <p>
@@ -57,7 +57,7 @@ const About = () => {
                      backdropFilter: 'blur(20px)',
                      border: '1px solid rgba(255, 255, 255, 0.1)'
                    }}>
-                <span className="text-cyan-300 font-semibold">3+</span> Years Experience
+                <span className="text-cyan-300 font-semibold">1+</span> Years Experience
               </div>
               <div className="px-6 py-3 rounded-full text-white"
                    style={{
@@ -65,33 +65,38 @@ const About = () => {
                      backdropFilter: 'blur(20px)',
                      border: '1px solid rgba(255, 255, 255, 0.1)'
                    }}>
-                <span className="text-purple-300 font-semibold">50+</span> Projects Completed
+                <span className="text-purple-300 font-semibold">5+</span> Projects Completed
               </div>
             </div>
           </div>
 
           {/* Image/Graphic */}
-          <div className="relative">
-            <div className="rounded-3xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500"
-                 style={{
-                   background: 'rgba(255, 255, 255, 0.05)',
-                   backdropFilter: 'blur(20px)',
-                   border: '1px solid rgba(255, 255, 255, 0.1)'
-                 }}>
-              <div className="rounded-2xl h-80 flex items-center justify-center"
-                   style={{
-                     background: 'linear-gradient(135deg, rgba(0, 216, 255, 0.1) 0%, rgba(121, 40, 202, 0.1) 100%)'
-                   }}>
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-4xl">👩‍💻</span>
-                  </div>
-                  <p className="text-lg font-semibold text-white">Creative Developer</p>
-                  <p className="text-gray-400">& UI/UX Designer</p>
-                </div>
-              </div>
-            </div>
-          </div>
+         <div className="relative">
+  <div className="rounded-3xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500"
+       style={{
+         background: 'rgba(255, 255, 255, 0.05)',
+         backdropFilter: 'blur(20px)',
+         border: '1px solid rgba(255, 255, 255, 0.1)'
+       }}>
+    <div className="rounded-2xl h-80 flex items-center justify-center"
+         style={{
+           background: 'linear-gradient(135deg, rgba(0, 216, 255, 0.1) 0%, rgba(121, 40, 202, 0.1) 100%)'
+         }}>
+      <div className="text-center">
+        {/* Replaced emoji with actual image */}
+        <div className="w-32 h-32 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden border-2 border-cyan-400 shadow-lg">
+          <img 
+            src="/pro.jpeg" 
+            alt="Mukesh A - Creative Developer"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <p className="text-lg font-semibold text-white">Creative Developer</p>
+        <p className="text-gray-400"></p>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </section>

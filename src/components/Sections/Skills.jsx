@@ -12,7 +12,7 @@ const Skills = () => {
     { name: "Tailwind CSS", level: 92, color: "from-teal-400 to-cyan-500", icon: "🎨" },
     { name: "GSAP", level: 86, color: "from-green-400 to-green-600", icon: "✨" },
     { name: "Node.js", level: 82, color: "from-green-500 to-emerald-600", icon: "🟢" },
-    { name: "UI/UX Design", level: 88, color: "from-purple-400 to-pink-500", icon: "🎯" }
+    { name: "Git", level: 88, color: "from-purple-400 to-pink-500", icon: "🎯" }
   ]
 
   useEffect(() => {
@@ -183,8 +183,8 @@ const Skills = () => {
             </h3>
             <p className="text-gray-300">
               I'm constantly exploring new technologies and frameworks to stay at the forefront of web development. 
-              Currently diving deeper into <span className="text-cyan-300 font-semibold">Three.js</span> and{' '}
-              <span className="text-purple-300 font-semibold">WebGL</span> for immersive 3D web experiences.
+              Currently diving deeper into <span className="text-cyan-300 font-semibold">WORD PRESS</span> and{' '}
+              <span className="text-purple-300 font-semibold">Fire Base</span> for immersive 3D web experiences.
             </p>
           </div>
         </div>
